@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  mediatools:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./static/uploads:/app/static/uploads
+      - ./static/outputs:/app/static/outputs
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
+    mem_limit: 4g
+    cpus: '2.0'

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediaTools Pro | أدوات الوسائط</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<!-- Background -->
+<div class="bg-grid"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- Header -->
+<header class="header">
+  <div class="logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="url(#g1)" stroke-width="2"/><path d="M12 20l5 5 11-11" stroke="url(#g1)" stroke-width="2.5" stroke-linecap="round"/><defs><linearGradient id="g1" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#6EE7F7"/><stop offset="1" stop-color="#A78BFA"/></linearGradient></defs></svg>
+    </div>
+    <span class="logo-text">MediaTools <span class="logo-pro">PRO</span></span>
+  </div>
+  <div class="header-actions">
+    <button class="lang-btn" onclick="toggleLang()" title="Switch Language">
+      <span class="lang-ar">EN</span>
+      <span class="lang-en" style="display:none">ع</span>
+    </button>
+    <div class="status-dot" title="جاهز للعمل / Ready"></div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <h1 class="hero-title">
+    <span class="lang-ar">مركز تحويل</span>
+    <span class="lang-en" style="display:none">Media</span>
+    <br>
+    <span class="gradient-text lang-ar">الوسائط الشامل</span>
+    <span class="gradient-text lang-en" style="display:none">Conversion Hub</span>
+  </h1>
+  <p class="hero-sub lang-ar">PDF · صور · فيديو · صوت · تنزيل · OCR — كل ما تحتاجه في مكان واحد</p>
+  <p class="hero-sub lang-en" style="display:none">PDF · Images · Video · Audio · Download · OCR — Everything in one place</p>
+</section>
+
+<!-- Tab Navigation -->
+<nav class="tab-nav">
+  <button class="tab-btn active" data-tab="pdf" onclick="switchTab('pdf')">
+    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6"/></svg>
+    <span class="lang-ar">PDF</span><span class="lang-en" style="display:none">PDF</span>
+  </button>
+  <button class="tab-btn" data-tab="image" onclick="switchTab('image')">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+    <span class="lang-ar">صور</span><span class="lang-en" style="display:none">Images</span>
+  </button>
+  <button class="tab-btn" data-tab="video" onclick="switchTab('video')">
+    <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+    <span class="lang-ar">فيديو</span><span class="lang-en" style="display:none">Video</span>
+  </button>
+  <button class="tab-btn" data-tab="audio" onclick="switchTab('audio')">
+    <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+    <span class="lang-ar">صوت</span><span class="lang-en" style="display:none">Audio</span>
+  </button>
+  <button class="tab-btn" data-tab="download" onclick="switchTab('download')">
+    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    <span class="lang-ar">تنزيل</span><span class="lang-en" style="display:none">Download</span>
+  </button>
+  <button class="tab-btn" data-tab="ocr" onclick="switchTab('ocr')">
+    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    <span class="lang-ar">OCR</span><span class="lang-en" style="display:none">OCR</span>
+  </button>
+</nav>
+
+<!-- Main Content -->
+<main class="main">
+
+  <!-- ══ PDF TAB ══ -->
+  <section id="tab-pdf" class="tab-content active">
+    <div class="tools-grid">
+
+      <!-- Merge PDFs -->
+      <div class="tool-card" data-tool="pdf-merge">
+        <div class="tool-header">
+          <div class="tool-icon" style="--c1:#6EE7F7;--c2:#3B82F6">
+            <svg viewBox="0 0 24 24"><path d="M8 3v8l4-4 4 4V3"/><rect x="3" y="15" width="18" height="6" rx="1"/></svg>
+          </div>
+          <div>
+            <h3 class="lang-ar">دمج PDF</h3><h3 class="lang-en" style="display:none">Merge PDFs</h3>
+            <p class="tool-desc lang-ar">ادمج عدة ملفات PDF في ملف واحد</p>
+            <p class="tool-desc lang-en" style="display:none">Combine multiple PDFs into one</p>
+          </div>
+        </div>
+        <div class="dropzone" id="dz-pdf-merge" data-multi="true" data-accept=".pdf" onclick="triggerInput(this)">
+          <div class="dz-inner">
+            <div class="dz-icon">📄</div>
+            <p class="lang-ar">اسحب ملفات PDF هنا أو انقر للاختيار</p>
+            <p class="lang-en" style="display:none">Drag PDF files here or click to select</p>
+            <span class="dz-hint lang-ar">يدعم ملفات متعددة</span>
+            <span class="dz-hint lang-en" style="display:none">Supports multiple files</span>
+          </div>
+          <input type="file" multiple accept=".pdf" class="file-input" onchange="handleFiles(this, 'pdf-merge')">
+        </div>
+        <div class="file-list" id="files-pdf-merge"></div>
+        <button class="btn-primary" onclick="submitPdfMerge()">
+          <span class="lang-ar">دمج الآن</span><span class="lang-en" style="display:none">Merge Now</span>
+        </button>
+      </div>
+
+      <!-- Images to PDF -->
+      <div class="tool-card" data-tool="img-to-pdf">
+        <div class="tool-header">
+          <div class="tool-icon" style="--c1:#F59E0B;--c2:#EF4444">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          </div>
+          <div>
+            <h3 class="lang-ar">صور → PDF</h3><h3 class="lang-en" style="display:none">Images → PDF</h3>
+            <p class="tool-desc lang-ar">حوّل صورة أو مجموعة صور إلى PDF</p>
+            <p class="tool-desc lang-en" style="display:none">Convert images to a PDF document</p>
+          </div>
+        </div>
+        <div class="dropzone" id="dz-img-pdf" data-multi="true" data-accept="image/*,.heic,.heif,.HEIC,.HEIF" onclick="triggerInput(this)">
+          <div class="dz-inner">
+            <div class="dz-icon">🖼️</div>
+            <p class="lang-ar">اسحب الصور هنا</p>
+            <p class="lang-en" style="display:none">Drag images here</p>
+            <span class="dz-hint">JPG, PNG, WEBP, BMP...</span>
+          </div>
+          <input type="file" multiple accept="image/*,.heic,.heif,.HEIC,.HEIF" class="file-input" onchange="handleFiles(this, 'img-pdf')">
+        </div>
+        <div class="file-list" id="files-img-pdf"></div>
+        <button class="btn-primary" onclick="submitImgToPdf()">
+          <span class="lang-ar">تحويل إلى PDF</span><span class="lang-en" style="display:none">Convert to PDF</span>
+        </button>
+      </div>
+
+      <!-- Compress PDF -->
+      <div class="tool-card" data-tool="pdf-compress">
+        <div class="tool-header">
+          <div class="tool-icon" style="--c1:#10B981;--c2:#059669">
+            <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9" stroke-dasharray="4 2"/></svg>
+          </div>
+          <div>
+            <h3 class="lang-ar">ضغط PDF</h3><h3 class="lang-en" style="display:none">Compress PDF</h3>
+            <p class="tool-desc lang-ar">قلل حجم ملف PDF مع الحفاظ على الجودة</p>
+            <p class="tool-desc lang-en" style="display:none">Reduce PDF size while keeping quality</p>
+          </div>
+        </div>
+        <div class="dropzone" id="dz-pdf-compress" onclick="triggerInput(this)">
+          <div class="dz-inner">
+            <div class="dz-icon">📦</div>
+            <p class="lang-ar">اسحب ملف PDF هنا</p>
+            <p class="lang-en" style="display:none">Drag a PDF file here</p>
+          </div>
+          <input type="file" accept=".pdf" class="file-input" onchange="handleFiles(this, 'pdf-compress')">
+        </div>
+        <div class="file-list" id="files-pdf-compress"></div>
+        <button class="btn-primary" onclick="submitPdfCompress()">
+          <span class="lang-ar">ضغط الملف</span><span class="lang-en" style="display:none">Compress</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ IMAGE TAB ══ -->
+  <section id="tab-image" class="tab-content">
+    <div class="tools-grid">
+
+      <!-- Convert Image -->
+      <div class="tool-card">
+        <div class="tool-header">
+          <div class="tool-icon" style="--c1:#A78BFA;--c2:#7C3AED">
+            <svg viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+          </div>
+          <div>
+            <h3 class="lang-ar">تحويل صيغة الصورة</h3><h3 class="lang-en" style="display:none">Convert Image Format</h3>
+            <p class="tool-desc lang-ar">حوّل بين JPG، PNG، WEBP، BMP، GIF، ICO...</p>
+            <p class="tool-desc lang-en" style="display:none">Convert between JPG, PNG, WEBP, BMP, GIF, ICO...</p>
+          </div>
+        </div>
+        <div class="dropzone" id="dz-img-convert" onclick="triggerInput(this)">
+          <div class="dz-inner">
+            <div class="dz-icon">🔄</div>
+            <p class="lang-ar">اختر صورة للتحويل</p>
+            <p class="lang-en" style="display:none">Choose an image to convert</p>
+          </div>
+          <input type="file" accept="image/*,.heic,.heif,.HEIC,.HEIF" class="file-input" onchange="handleFiles(this, 'img-convert')">
+        </div>
+        <div class="file-list" id="files-img-convert"></div>
+        <div class="option-row">
+          <label class="lang-ar">الصيغة المطلوبة:</label>
+          <label class="lang-en" style="display:none">Output format:</label>
+          <select id="img-convert-fmt" class="select-input">
+            <option value="jpg">JPG</option>
+            <option value="png">PNG</option>
+            <option value="webp">WEBP</option>
+            <option value="bmp">BMP</option>
+            <option value="gif">GIF</option>
+            <option value="tiff">TIFF</option>
+            <option value="ico">ICO</option>
+          </select>
+        </div>
+        <button class="btn-primary" onclick="submitImgConvert()">
+          <span class="lang-ar">تحويل</span><span class="lang-en" style="display:none">Convert</span>
+        </button>
+      </div>
+
+      <!-- Compress Image -->
+      <div class="tool-card">
+        <div class="tool-header">
+          <div class="tool-icon" style="--c1:#F59E0B;--c2:#D97706">
+            <svg viewBox="0 0 24 24"><path d="M9 7H6a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-3M9 7V5a2 2 0 012-2h6l4 4v6a2 2 0 01-2 2h-2"/><line x1="12" y1="12" x2="21" y2="3"/></svg>
+          </div>
+          <div>
+            <h3 class="lang-ar">ضغط الصور</h3><h3 class="lang-en" style="display:none">Compress Images</h3>
+            <p class="tool-desc lang-ar">قلل حجم الصور بدون فقدان ملحوظ في الجودة</p>
+            <p class="tool-desc lang-en" style="display:none">Reduce image size with minimal quality loss</p>
+          </div>
+        </div>
+        <div class="dropzone" id="dz-img-compress" onclick="triggerInput(this)">
+          <div class="dz-inner">
+            <div class="dz-icon">🗜️</div>
+            <p class="lang-ar">اسحب الصورة هنا</p>
+            <p class="lang-en" style="display:none">Drag image here</p>
+          </div>
+          <input type="file" accept="image/*,.heic,.heif,.HEIC,.HEIF" class="file-input" onchange="handleFiles(this, 'img-compress')">
+        </div>
+        <div class="file-list" id="files-img-compress"></div>
+        <div class="option-row">
+          <label class="lang-ar">الجودة: <span id="quality-val">75</span>%</label>
+          <label class="lang-en" style="display:none">Quality: <span id="quality-val-en">75</span>%</label>
+          <input type="range" id="img-quality" min="10" max="95" value="75" class="slider"
+                 oninput="document.getElementById('quality-val').textContent=this.value; document.getElementById('quality-val-en').textContent=this.value">
+        </div>
+        <button class="btn-primary" onclick="submitImgCompress()">
+          <span class="lang-ar">ضغط الصورة</span><span class="lang-en" style="display:none">Compress</span>
+        </button>
+      </div>
+
+      <!-- Resize Image -->
+      <div class="tool-card">
+        <div class="tool-header">
+          <div class="tool-icon" style="--c1:#6EE7F7;--c2:#0891B2">
+            <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+          <div>
+            <h3 class="lang-ar">تغيير أبعاد الصورة</h3><h3 class="lang-en" style="display:none">Resize Image</h3>
+            <p class="tool-desc lang-ar">غيّر حجم الصورة مع الحفاظ على التناسب</p>
+            <p class="tool-desc lang-en" style="display:none">Resize image while maintaining aspect ratio</p>
+          </div>
+        </div>
+        <div class="dropzone" id="dz-img-resize" onclick="triggerInput(this)">
+          <div class="dz-inner">
+            <div class="dz-icon">📐</div>
+            <p class="lang-ar">اسحب الصورة هنا</p>
+            <p class="lang-en" style="display:none">Drag image here</p>
+          </div>
+          <input type="file" accept="image/*,.heic,.heif,.HEIC,.HEIF" class="file-input" onchange="handleFiles(this, 'img-resize')">
+        </div>
+        <div class="file-list" id="files-img-resize"></div>
+        <div class="option-row two-col">
+          <div>
+            <label class="lang-ar">العرض (px)</label><label class="lang-en" style="display:none">Width (px)</label>
+            <input type="number" id="resize-w" class="num-input" placeholder="e.g. 1920">
+          </div>
+          <div>
+            <label class="lang-ar">الارتفاع (px)</label><label class="lang-en" style="display:none">Height (px)</label>
+            <input type="number" id="resize-h" class="num-input" placeholder="e.g. 1080">
+          </div>
+        </div>
+        <p class="hint-text lang-ar">اترك أحد الحقلين فارغاً للحفاظ على النسبة</p>
+        <p class="hint-text lang-en" style="display:none">Leave one empty to maintain aspect ratio</p>
+        <button class="btn-primary" onclick="submitImgResize()">
+          <span class="lang-ar">تغيير الحجم</span><span class="lang-en" style="display:none">Resize</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ VIDEO TAB ══ -->
+  <section id="tab-video" class="tab-content">
+    <div class="tools-grid">
+
+      <!-- Convert Video -->
+      <div class="tool-card">
+        <div class="tool-header">
+          <div class="tool-icon" style="--c1:#F43F5E;--c2:#BE123C">
+            <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          </div>
+          <div>
+            <h3 class="lang-ar">تحويل صيغة الفيديو</h3><h3 class="lang-en" style="display:none">Convert Video Format</h3>
+            <p class="tool-desc lang-ar">MP4، MKV، AVI، MOV، WEBM وغيرها</p>
+            <p class="tool-desc lang-en" style="display:none">MP4, MKV, AVI, MOV, WEBM and more</p>
+          </div>
+        </div>
+        <div class="dropzone" id="dz-vid-convert" onclick="triggerInput(this)">
+          <div class="dz-inner"><div class="dz-icon">🎬</div>
+            <p class="lang-ar">اسحب الفيديو هنا</p>
+            <p class="lang-en" style="display:none">Drag video here</p>
+          </div>
+          <input type="file" accept="video/*" class="file-input" onchange="handleFiles(this, 'vid-convert')">
+        </div>
+        <div class="file-list" id="files-vid-convert"></div>
+        <div class="option-row two-col">
+          <div>
+            <label class="lang-ar">الصيغة</label><label class="lang-en" style="display:none">Format</label>
+            <select id="vid-fmt" class="select-input">
+              <option value="mp4">MP4</option><option value="mkv">MKV</option>
+              <option value="avi">AVI</option><option value="mov">MOV</option>
+              <option value="webm">WEBM</option>
+            </select>
+          </div>
+          <div>
+            <label class="lang-ar">الجودة</label><label class="lang-en" style="display:none">Quality</label>
+            <select id="vid-quality" class="select-input">
+              <option value="high" class="lang-ar">عالية</option>
+              <option value="medium" selected class="lang-ar">متوسطة</option>
+              <option value="low" class="lang-ar">منخفضة</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn-primary" onclick="submitVidConvert()">
+          <span class="lang-ar">تحويل الفيديو</span><span class="lang-en" style="display:none">Convert Video</span>
+        </button>
+      </div>
+
+      <!-- Extract Audio -->
+      <div class="tool-card">
+        <div class="tool-header">
+          <div class="tool-icon" style="--c1:#8B5CF6;--c2:#6D28D9">
+            <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          </div>
+          <div>
+            <h3 class="lang-ar">فيديو → صوت</h3><h3 class="lang-en" style="display:none">Video → Audio</h3>
+            <p class="tool-desc lang-ar">استخرج الصوت من أي فيديو</p>
+            <p class="tool-desc lang-en" style="display:none">Extract audio from any video</p>
+          </div>
+        </div>
+        <div class="dropzone" id="dz-extract-audio" onclick="triggerInput(this)">
+          <div class="dz-inner"><div class="dz-icon">🎵</div>
+            <p class="lang-ar">اسحب الفيديو هنا</p>
+            <p class="lang-en" style="display:none">Drag video here</p>
+          </div>
+          <input type="file" accept="video/*" class="file-input" onchange="handleFiles(this, 'extract-audio')">
+        </div>
+        <div class="file-list" id="files-extract-audio"></div>
+        <div class="option-row">
+          <label class="lang-ar">صيغة الصوت:</label><label class="lang-en" style="display:none">Audio format:</label>
+          <select id="audio-extract-fmt" class="select-input">
+            <option value="mp3">MP3</option><option value="aac">AAC</option>
+            <option value="wav">WAV</option><option value="flac">FLAC</option>
+            <option value="ogg">OGG</option><option value="m4a">M4A</option>
+          </select>
+        </div>
+        <button class="btn-primary" onclick="submitExtractAudio()">
+          <span class="lang-ar">استخراج الصوت</span><span class="lang-en" style="display:none">Extract Audio</span>
+        </button>
+      </div>
+
+      <!-- Trim Video -->
+      <div class="tool-card">
+        <div class="tool-header">
+          <div class="tool-icon" style="--c1:#F59E0B;--c2:#D97706">
+            <svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+          </div>
+          <div>
+            <h3 class="lang-ar">قص الفيديو</h3><h3 class="lang-en" style="display:none">Trim Video</h3>
+            <p class="tool-desc lang-ar">احتفظ بالجزء الذي تريده من الفيديو</p>
+            <p class="tool-desc lang-en" style="display:none">Keep only the part you want</p>
+          </div>
+        </div>
+        <div class="dropzone" id="dz-vid-trim" onclick="triggerInput(this)">
+          <div class="dz-inner"><div class="dz-icon">✂️</div>
+            <p class="lang-ar">اسحب الفيديو هنا</p>
+            <p class="lang-en" style="display:none">Drag video here</p>
+          </div>
+          <input type="file" accept="video/*" class="file-input" onchange="handleFiles(this, 'vid-trim')">
+        </div>
+        <div class="file-list" id="files-vid-trim"></div>
+        <div class="option-row two-col">
+          <div>
+            <label class="lang-ar">من (ثانية)</label><label class="lang-en" style="display:none">Start (sec)</label>
+            <input type="number" id="trim-start" class="num-input" value="0" min="0" placeholder="0">
+          </div>
+          <div>
+            <label class="lang-ar">إلى (ثانية)</label><label class="lang-en" style="display:none">End (sec)</label>
+            <input type="number" id="trim-end" class="num-input" min="1" placeholder="e.g. 60">
+          </div>
+        </div>
+        <button class="btn-primary" onclick="submitVidTrim()">
+          <span class="lang-ar">قص الفيديو</span><span class="lang-en" style="display:none">Trim Video</span>
+        </button>
+      </div>
+
+      <!-- Compress Video -->
+      <div class="tool-card">
+        <div class="tool-header">
+          <div class="tool-icon" style="--c1:#10B981;--c2:#047857">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div>
+            <h3 class="lang-ar">ضغط الفيديو</h3><h3 class="lang-en" style="display:none">Compress Video</h3>
+            <p class="tool-desc lang-ar">قلل حجم الفيديو مع الحفاظ على الجودة</p>
+            <p class="tool-desc lang-en" style="display:none">Reduce video size while preserving quality</p>
+          </div>
+        </div>
+        <div class="dropzone" id="dz-vid-compress" onclick="triggerInput(this)">
+          <div class="dz-inner"><div class="dz-icon">📉</div>
+            <p class="lang-ar">اسحب الفيديو هنا</p>
+            <p class="lang-en" style="display:none">Drag video here</p>
+          </div>
+          <input type="file" accept="video/*" class="file-input" onchange="handleFiles(this, 'vid-compress')">
+        </div>
+        <div class="file-list" id="files-vid-compress"></div>
+        <div class="option-row">
+          <label class="lang-ar">مستوى الضغط:</label><label class="lang-en" style="display:none">Compression level:</label>
+          <select id="vid-compress-quality" class="select-input">
+            <option value="high" class="lang-ar">جودة عالية</option>
+            <option value="medium" selected class="lang-ar">متوازن</option>
+            <option value="low" class="lang-ar">ضغط أقصى</option>
+          </select>
+        </div>
+        <button class="btn-primary" onclick="submitVidCompress()">
+          <span class="lang-ar">ضغط الفيديو</span><span class="lang-en" style="display:none">Compress</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ AUDIO TAB ══ -->
+  <section id="tab-audio" class="tab-content">
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-header">
+          <div class="tool-icon" style="--c1:#EC4899;--c2:#BE185D">
+            <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          </div>
+          <div>
+            <h3 class="lang-ar">تحويل صيغة الصوت</h3><h3 class="lang-en" style="display:none">Convert Audio Format</h3>
+            <p class="tool-desc lang-ar">MP3، AAC، FLAC، WAV، OGG، M4A، OPUS</p>
+            <p class="tool-desc lang-en" style="display:none">MP3, AAC, FLAC, WAV, OGG, M4A, OPUS</p>
+          </div>
+        </div>
+        <div class="dropzone" id="dz-audio-convert" onclick="triggerInput(this)">
+          <div class="dz-inner"><div class="dz-icon">🎶</div>
+            <p class="lang-ar">اسحب ملف الصوت هنا</p>
+            <p class="lang-en" style="display:none">Drag audio file here</p>
+          </div>
+          <input type="file" accept="audio/*,.flac,.ogg,.opus,.m4a,.aac,.wav,.mp3,.wma" class="file-input" onchange="handleFiles(this, 'audio-convert')">
+        </div>
+        <div class="file-list" id="files-audio-convert"></div>
+        <div class="option-row">
+          <label class="lang-ar">الصيغة المطلوبة:</label><label class="lang-en" style="display:none">Output format:</label>
+          <select id="audio-fmt" class="select-input">
+            <option value="mp3">MP3</option><option value="aac">AAC</option>
+            <option value="flac">FLAC</option><option value="wav">WAV</option>
+            <option value="ogg">OGG</option><option value="m4a">M4A</option>
+            <option value="opus">OPUS</option>
+          </select>
+        </div>
+        <button class="btn-primary" onclick="submitAudioConvert()">
+          <span class="lang-ar">تحويل الصوت</span><span class="lang-en" style="display:none">Convert Audio</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DOWNLOAD TAB ══ -->
+  <section id="tab-download" class="tab-content">
+    <div class="tools-grid">
+
+      <!-- Generic URL -->
+      <div class="tool-card">
+        <div class="tool-header">
+          <div class="tool-icon" style="--c1:#6EE7F7;--c2:#2563EB">
+            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </div>
+          <div>
+            <h3 class="lang-ar">تنزيل ملف من رابط</h3><h3 class="lang-en" style="display:none">Download from URL</h3>
+            <p class="tool-desc lang-ar">أدخل أي رابط مباشر لتنزيل الملف</p>
+            <p class="tool-desc lang-en" style="display:none">Enter any direct link to download the file</p>
+          </div>
+        </div>
+        <div class="url-input-wrap">
+          <input type="url" id="dl-url" class="url-input" placeholder="https://example.com/file.pdf">
+        </div>
+        <button class="btn-primary" onclick="submitDownloadUrl()">
+          <span class="lang-ar">تنزيل</span><span class="lang-en" style="display:none">Download</span>
+        </button>
+      </div>
+
+      <!-- YouTube -->
+      <div class="tool-card">
+        <div class="tool-icon-wrap">
+          <div class="tool-header">
+            <div class="tool-icon" style="--c1:#FF0000;--c2:#CC0000">
+              <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.47A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+            </div>
+            <div>
+              <h3>YouTube</h3>
+              <p class="tool-desc lang-ar">تنزيل فيديو أو قائمة تشغيل كاملة أو صوت فقط</p>
+              <p class="tool-desc lang-en" style="display:none">Download video, playlist, or audio only</p>
+            </div>
+          </div>
+        </div>
+        <div class="url-input-wrap">
+          <input type="url" id="yt-url" class="url-input" placeholder="https://youtube.com/watch?v=...">
+        </div>
+        <div class="option-row two-col">
+          <div>
+            <label class="lang-ar">النوع</label><label class="lang-en" style="display:none">Type</label>
+            <select id="yt-type" class="select-input">
+              <option value="video" class="lang-ar">فيديو</option>
+              <option value="audio" class="lang-ar">صوت فقط</option>
+            </select>
+          </div>
+          <div>
+            <label class="lang-ar">الجودة</label><label class="lang-en" style="display:none">Quality</label>
+            <select id="yt-quality" class="select-input">
+              <option value="best">Best</option>
+              <option value="1080p">1080p</option>
+              <option value="720p">720p</option>
+              <option value="480p">480p</option>
+              <option value="360p">360p</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn-primary" onclick="submitYouTube()">
+          <span class="lang-ar">تنزيل من يوتيوب</span><span class="lang-en" style="display:none">Download from YouTube</span>
+        </button>
+      </div>
+
+      <!-- Social Media -->
+      <div class="tool-card">
+        <div class="tool-header">
+          <div class="tool-icon" style="--c1:#E1306C;--c2:#833AB4">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+          </div>
+          <div>
+            <h3 class="lang-ar">السوشيال ميديا</h3><h3 class="lang-en" style="display:none">Social Media</h3>
+            <p class="tool-desc lang-ar">Instagram · TikTok · Twitter/X · Facebook · Reddit</p>
+            <p class="tool-desc lang-en" style="display:none">Instagram · TikTok · Twitter/X · Facebook · Reddit</p>
+          </div>
+        </div>
+        <div class="url-input-wrap">
+          <input type="url" id="social-url" class="url-input" placeholder="https://instagram.com/p/...">
+        </div>
+        <button class="btn-primary" onclick="submitSocial()">
+          <span class="lang-ar">تنزيل المحتوى</span><span class="lang-en" style="display:none">Download Content</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ OCR TAB ══ -->
+  <section id="tab-ocr" class="tab-content">
+    <div class="tools-grid">
+      <div class="tool-card ocr-card">
+        <div class="tool-header">
+          <div class="tool-icon" style="--c1:#34D399;--c2:#059669">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <div>
+            <h3 class="lang-ar">استخراج النص من الصور</h3><h3 class="lang-en" style="display:none">Extract Text from Images</h3>
+            <p class="tool-desc lang-ar">يدعم العربية والإنجليزية مع محركَي EasyOCR وTesseract</p>
+            <p class="tool-desc lang-en" style="display:none">Supports Arabic & English with EasyOCR and Tesseract engines</p>
+          </div>
+        </div>
+        <div class="dropzone" id="dz-ocr" onclick="triggerInput(this)">
+          <div class="dz-inner"><div class="dz-icon">🔍</div>
+            <p class="lang-ar">اسحب الصورة هنا (JPG، PNG، BMP...)</p>
+            <p class="lang-en" style="display:none">Drag image here (JPG, PNG, BMP...)</p>
+          </div>
+          <input type="file" accept="image/*,.heic,.heif,.HEIC,.HEIF" class="file-input" onchange="handleFiles(this, 'ocr')">
+        </div>
+        <div class="file-list" id="files-ocr"></div>
+        <div class="option-row two-col">
+          <div>
+            <label class="lang-ar">اللغة</label><label class="lang-en" style="display:none">Language</label>
+            <select id="ocr-lang" class="select-input">
+              <option value="auto" class="lang-ar">تلقائي (عربي+إنجليزي)</option>
+              <option value="ara" class="lang-ar">عربي فقط</option>
+              <option value="eng" class="lang-ar">إنجليزي فقط</option>
+              <option value="both" class="lang-ar">الاثنان معاً</option>
+            </select>
+          </div>
+          <div>
+            <label class="lang-ar">المحرك</label><label class="lang-en" style="display:none">Engine</label>
+            <select id="ocr-engine" class="select-input">
+              <option value="easyocr">EasyOCR (أفضل)</option>
+              <option value="tesseract">Tesseract</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn-primary" onclick="submitOCR()">
+          <span class="lang-ar">استخراج النص</span><span class="lang-en" style="display:none">Extract Text</span>
+        </button>
+        <!-- OCR Result -->
+        <div id="ocr-result" class="ocr-result" style="display:none">
+          <div class="ocr-result-header">
+            <span class="lang-ar">النص المستخرج</span><span class="lang-en" style="display:none">Extracted Text</span>
+            <button class="copy-btn" onclick="copyOCR()">
+              <svg viewBox="0 0 24 24" width="16" height="16"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              <span class="lang-ar">نسخ</span><span class="lang-en" style="display:none">Copy</span>
+            </button>
+          </div>
+          <textarea id="ocr-text" class="ocr-textarea" readonly></textarea>
+          <div id="ocr-stats" class="ocr-stats"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Toast notification -->
+<div id="toast" class="toast"></div>
+
+<!-- Progress Modal -->
+<div id="progress-modal" class="modal-overlay" style="display:none">
+  <div class="modal-box">
+    <div class="modal-spinner">
+      <svg viewBox="0 0 50 50" class="spinner-svg"><circle cx="25" cy="25" r="20" fill="none" stroke-width="4"/></svg>
+    </div>
+    <p id="modal-message" class="modal-msg lang-ar">جارٍ المعالجة...</p>
+    <p id="modal-message-en" class="modal-msg lang-en" style="display:none">Processing...</p>
+    <div class="progress-bar-wrap"><div id="progress-bar" class="progress-bar"></div></div>
+    <p class="modal-hint lang-ar">قد تستغرق العمليات الكبيرة بعض الوقت</p>
+    <p class="modal-hint lang-en" style="display:none">Large files may take a moment</p>
+  </div>
+</div>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>
